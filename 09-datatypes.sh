@@ -10,3 +10,5 @@ echo "sum is $SUM"
 FRUITS=("Apple" "Bannana" "Pomogranete")
 
 echo "fruitsare : ${FRUITS[@]}"
+
+echo "fruitsare : ${FRUITS[2]}"
