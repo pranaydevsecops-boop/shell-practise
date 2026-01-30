@@ -7,13 +7,22 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi 
 
-echo "installing nginx"
-dnf install nginx -y
-
+VALIDATE(){
 STATUS=$?
-
 if [ $STATUS -ne 0 ]; then
-    echo "Installion is failed not successfull"
+    echo "$2 is failed not successfull"
+    exit 1
 else
-    echo "installion is pass adn sucessfull"
+    echo "$2 is pass adn sucessfull"
 fi
+}
+
+
+dnf install nginx -y
+VALIDATE $STATUS "Installing nginx"
+
+dnf install mysql -y
+VALIDATE $STATUS "Installing mysql"
+
+dnf install nodejs -y
+VALIDATE $STATUS "Installig node"
