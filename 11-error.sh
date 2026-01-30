@@ -8,7 +8,7 @@ if [ $USERID -ne 0 ]; then
 fi 
 
 echo "executed"
-dnf install nginx -y
+dnf install nginxxxxxxx -y
 
 
 if [ $? -ne 0 ]; then
